@@ -25,16 +25,29 @@ def ensure_non_negative_coefficients(poly, q):
     return Poly(adjusted_coeffs, poly.gen)
 
 def symmetric_mod(r, q):
-    return abs(r) if r <= q / 2 else abs(r - q)
-
+    if q%2!=0:
+        if r <= (q-1)/2:
+            return abs(r)
+        else:
+            return abs(r-q)
+    else:
+        if r <= q/2:
+            return abs(r)
+        else:
+            return abs(r-q)
+            
 def round_q(x, q):
     x_dash = symmetric_mod(x, q)
-    return 0 if math.floor(q / 4) > x_dash > math.ceil(-q / 4) else 1
+    if math.floor(q / 4) > x_dash > math.ceil(-q / 4):
+        return 0
+    else:
+        return 1
 
 def round_q_poly(f, q):
     coeffs = f.all_coeffs()
-    rounded_coeffs = [round_q(c, q) for c in coeffs]
-    return Poly(rounded_coeffs, x)
+    for i in range(len(coeffs)):
+        coeffs[i] = round_q(coeffs[i], q)
+    return Poly(coeffs, x)
 
 def generate_small_poly(eta, q, n):
     possible_coeffs = np.concatenate((np.arange(0, eta + 1), np.arange(q - eta, q)))
