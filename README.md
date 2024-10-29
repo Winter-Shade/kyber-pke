@@ -1,2 +1,6 @@
-# kyber-pke
-An implementation of Kyber-PKE
+# Kyber Playground (Ongoing)
+
+Project Status: 
+- Implement a simplified version of KyberPKE (DONE)
+- Optimizations (Work in progress)
+- Frontend (Work in progress)
