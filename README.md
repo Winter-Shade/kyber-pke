@@ -1,4 +1,4 @@
-# Kyber Playground (Ongoing)
+# Kyber-PKE Simulation (Ongoing)
 
 Project Status: 
 - Implement a simplified version of KyberPKE (DONE)
