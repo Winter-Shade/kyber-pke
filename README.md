@@ -6,5 +6,5 @@ Project Status:
 - Frontend (Work in progress)
 
 
-To run the simplified version run the following command on terminal:
-`streamlit run app.py`
+To run the current version of the project run the following command on terminal:
+### `streamlit run app.py`
